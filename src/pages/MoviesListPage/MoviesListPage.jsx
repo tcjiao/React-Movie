@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { movies } from "../../data.js";
+import './MoviesListPage.css';
 
 
 export default function MoviesListPage() {

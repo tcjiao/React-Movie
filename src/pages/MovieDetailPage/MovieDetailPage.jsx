@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { movies } from "../../data.js";
+import './MovieDetailPage.css';
 
 
 export default function MovieDetailPage() {
@@ -12,16 +13,20 @@ export default function MovieDetailPage() {
   }
 
   return (
-    <div>
-      <h1>{selectedMovie.title}</h1>
-      <img src={selectedMovie.posterPath} alt={`Poster for ${selectedMovie.title}`} />
-      <p>Release Date: {selectedMovie.releaseDate}</p>
-      <p>Cast Members: </p>
-      <ul>
-        {selectedMovie.cast.map((actor, index) => (
-          <li key={index}>{actor}</li>
-        ))}
-      </ul>
+    <div className="movie-detail-container">
+      <div className="movie-details">
+        <h1>{selectedMovie.title}</h1>
+        <p>Release Date: {selectedMovie.releaseDate}</p>
+        <p>Cast Members: </p>
+        <ul>
+          {selectedMovie.cast.map((actor, index) => (
+            <li key={index}>{actor}</li>
+          ))}
+        </ul>
+      </div>
+      <div className="movie-poster">
+        <img src={selectedMovie.posterPath} alt={`Poster for ${selectedMovie.title}`} />
+      </div>
     </div>
   );
   }
